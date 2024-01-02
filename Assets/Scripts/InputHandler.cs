@@ -11,10 +11,9 @@ public class InputHandler : MonoBehaviour
     private InputAction.CallbackContext _context;
     
     private float _horizontalValue;
-    //private float _verticalValue;
-    //private float _currentVerticalValue;
-    private float _upValue;
-    private float _downValue;
+    private float _verticalValue;
+    //private float _upValue;
+    //private float _downValue;
     private float _strengthValue;
     
     // Awake is called when the script is first loaded, or when an object it is attached to is instantiated.
@@ -28,15 +27,11 @@ public class InputHandler : MonoBehaviour
         
         _inputActions.CueControl.Horizontal.performed += OnHorizontal;
         
-        /*
-        _inputActions.CueControl.Vertical.started += OnVertical;
         _inputActions.CueControl.Vertical.performed += OnVertical;
-        _inputActions.CueControl.Vertical.canceled += OnVertical;
-        */
 
-        _inputActions.CueControl.Up.performed += OnUp;
+        //_inputActions.CueControl.Up.performed += OnUp;
         
-        _inputActions.CueControl.Down.performed += OnDown;
+        //_inputActions.CueControl.Down.performed += OnDown;
         
         _inputActions.CueControl.Strength.performed += OnStrength;
     }
@@ -61,27 +56,23 @@ public class InputHandler : MonoBehaviour
         //Debug.Log("Horizontal Input: " + _horizontalValue);
     }
     
-    /* Input System 1D Axis seem bugged, using OnUp(), OnDown() instead
     public void OnVertical(InputAction.CallbackContext context)
     {
-
         _verticalValue = _inputActions.CueControl.Vertical.ReadValue<float>();
-        _currentVerticalValue = Mathf.MoveTowards(_verticalValue, _currentVerticalValue, 1f * Time.deltaTime);
-        Debug.Log("Vertical Input: " + _currentVerticalValue);
+        //Debug.Log("Vertical Input: " + _verticalValue);
     }
-    */
 
-    public void OnUp(InputAction.CallbackContext context)
-    {
-        _upValue = _inputActions.CueControl.Up.ReadValue<float>();
-        //Debug.Log("Up Input: " + _upValue);
-    }
+    // public void OnUp(InputAction.CallbackContext context)
+    // {
+    //     _upValue = _inputActions.CueControl.Up.ReadValue<float>();
+    //     //Debug.Log("Up Input: " + _upValue);
+    // }
     
-    public void OnDown(InputAction.CallbackContext context)
-    {
-        _downValue = _inputActions.CueControl.Down.ReadValue<float>();
-        //Debug.Log("Down Input: " + _downValue);
-    }
+    // public void OnDown(InputAction.CallbackContext context)
+    // {
+    //     _downValue = _inputActions.CueControl.Down.ReadValue<float>();
+    //     //Debug.Log("Down Input: " + _downValue);
+    // }
     
     public void OnStrength(InputAction.CallbackContext context)
     {
@@ -96,17 +87,23 @@ public class InputHandler : MonoBehaviour
         return _horizontalValue;
     }
     
-    public float GetUp()
+    public float GetVertical()
     {
-        OnUp(_context);
-        return _upValue;
+        OnVertical(_context);
+        return _verticalValue;
     }
     
-    public float GetDown()
-    {
-        OnDown(_context);
-        return _downValue;
-    }
+    // public float GetUp()
+    // {
+    //     OnUp(_context);
+    //     return _upValue;
+    // }
+    
+    // public float GetDown()
+    // {
+    //     OnDown(_context);
+    //     return _downValue;
+    // }
     
     public float GetStrength()
     {
