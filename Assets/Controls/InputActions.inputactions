@@ -1,0 +1,148 @@
+{
+    "name": "InputActions",
+    "maps": [
+        {
+            "name": "CueControl",
+            "id": "80588ed5-19ea-48c3-a073-4433b1b5ef81",
+            "actions": [
+                {
+                    "name": "Horizontal",
+                    "type": "Value",
+                    "id": "83335f1b-6d33-476f-b147-a203ceb3d9e7",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Vertical",
+                    "type": "Value",
+                    "id": "73c231cf-8288-4bbb-ad67-dc673a554164",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Strength",
+                    "type": "Value",
+                    "id": "47c7d216-32be-4f44-982f-45156cbb041a",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Up",
+                    "type": "Value",
+                    "id": "51aaac26-68f5-4359-8141-d23e55b12fdb",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Down",
+                    "type": "Value",
+                    "id": "98c42a1a-fe23-4063-b5b3-7f466e390e61",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ea38b783-9340-4b5b-b79c-6da7952f7026",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/rz",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "SteeringWheel",
+                    "action": "Strength",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d56792aa-e1c3-40d7-863f-d503d2fb7944",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/stick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "SteeringWheel",
+                    "action": "Horizontal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "88e05884-23a5-47aa-b7e9-b70474e2627a",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Vertical",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "e0556089-a538-4113-bed8-e75b6063f2db",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/stick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "SteeringWheel",
+                    "action": "Vertical",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "44c257b4-55ad-4a5f-a930-44a71a11c721",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "SteeringWheel",
+                    "action": "Vertical",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "be669c97-4dbe-4ae4-8396-e25a47b490de",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "29e55307-1310-4913-b187-69074864038d",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/stick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "SteeringWheel",
+            "bindingGroup": "SteeringWheel",
+            "devices": [
+                {
+                    "devicePath": "<HID::Logitech G29 Driving Force Racing Wheel>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
