@@ -15,6 +15,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Horizontal1",
+                    "type": "Value",
+                    "id": "ceb6ac33-337d-40b2-a510-c9832d56f177",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Vertical",
                     "type": "Value",
                     "id": "73c231cf-8288-4bbb-ad67-dc673a554164",
@@ -104,6 +113,17 @@
                     "processors": "",
                     "groups": "SteeringWheel",
                     "action": "Vertical",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fac58cd6-a6ba-43d9-b496-86390f0d1e37",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/stick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "SteeringWheel",
+                    "action": "Horizontal1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

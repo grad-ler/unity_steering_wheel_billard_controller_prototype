@@ -37,6 +37,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""Horizontal1"",
+                    ""type"": ""Value"",
+                    ""id"": ""ceb6ac33-337d-40b2-a510-c9832d56f177"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
                     ""name"": ""Vertical"",
                     ""type"": ""Value"",
                     ""id"": ""73c231cf-8288-4bbb-ad67-dc673a554164"",
@@ -128,6 +137,17 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Vertical"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fac58cd6-a6ba-43d9-b496-86390f0d1e37"",
+                    ""path"": ""<HID::Logitech G29 Driving Force Racing Wheel>/stick/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""SteeringWheel"",
+                    ""action"": ""Horizontal1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -149,6 +169,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         // CueControl
         m_CueControl = asset.FindActionMap("CueControl", throwIfNotFound: true);
         m_CueControl_Horizontal = m_CueControl.FindAction("Horizontal", throwIfNotFound: true);
+        m_CueControl_Horizontal1 = m_CueControl.FindAction("Horizontal1", throwIfNotFound: true);
         m_CueControl_Vertical = m_CueControl.FindAction("Vertical", throwIfNotFound: true);
         m_CueControl_Strength = m_CueControl.FindAction("Strength", throwIfNotFound: true);
         m_CueControl_Up = m_CueControl.FindAction("Up", throwIfNotFound: true);
@@ -215,6 +236,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_CueControl;
     private List<ICueControlActions> m_CueControlActionsCallbackInterfaces = new List<ICueControlActions>();
     private readonly InputAction m_CueControl_Horizontal;
+    private readonly InputAction m_CueControl_Horizontal1;
     private readonly InputAction m_CueControl_Vertical;
     private readonly InputAction m_CueControl_Strength;
     private readonly InputAction m_CueControl_Up;
@@ -224,6 +246,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         private @InputActions m_Wrapper;
         public CueControlActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Horizontal => m_Wrapper.m_CueControl_Horizontal;
+        public InputAction @Horizontal1 => m_Wrapper.m_CueControl_Horizontal1;
         public InputAction @Vertical => m_Wrapper.m_CueControl_Vertical;
         public InputAction @Strength => m_Wrapper.m_CueControl_Strength;
         public InputAction @Up => m_Wrapper.m_CueControl_Up;
@@ -240,6 +263,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Horizontal.started += instance.OnHorizontal;
             @Horizontal.performed += instance.OnHorizontal;
             @Horizontal.canceled += instance.OnHorizontal;
+            @Horizontal1.started += instance.OnHorizontal1;
+            @Horizontal1.performed += instance.OnHorizontal1;
+            @Horizontal1.canceled += instance.OnHorizontal1;
             @Vertical.started += instance.OnVertical;
             @Vertical.performed += instance.OnVertical;
             @Vertical.canceled += instance.OnVertical;
@@ -259,6 +285,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Horizontal.started -= instance.OnHorizontal;
             @Horizontal.performed -= instance.OnHorizontal;
             @Horizontal.canceled -= instance.OnHorizontal;
+            @Horizontal1.started -= instance.OnHorizontal1;
+            @Horizontal1.performed -= instance.OnHorizontal1;
+            @Horizontal1.canceled -= instance.OnHorizontal1;
             @Vertical.started -= instance.OnVertical;
             @Vertical.performed -= instance.OnVertical;
             @Vertical.canceled -= instance.OnVertical;
@@ -300,6 +329,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     public interface ICueControlActions
     {
         void OnHorizontal(InputAction.CallbackContext context);
+        void OnHorizontal1(InputAction.CallbackContext context);
         void OnVertical(InputAction.CallbackContext context);
         void OnStrength(InputAction.CallbackContext context);
         void OnUp(InputAction.CallbackContext context);
